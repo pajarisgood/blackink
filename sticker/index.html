@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#222222">
+    <title>Sticker Wrapping - Black Ink Sticker</title>
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+      .sticker-card .img-square {
+        width: 100%;
+        aspect-ratio: 1/1;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 12px;
+        overflow: hidden;
+      }
+      .sticker-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 0;
+        background: #fff;
+        display: block;
+      }
+      .consultation-section {
+        margin-top: 3em;
+      }
+      @media (min-width: 768px) {
+        .nav-links li a {
+          color: #000 !important;
+        }
+        .nav-links li a::after {
+          background: #ff0000 !important;
+        }
+        .nav-links li a:hover::after,
+        .nav-links li a.active::after {
+          background: #ff0000 !important;
+        }
+        .consultation-section {
+          margin: 5em auto;
+          max-width: 800px;
+        }
+      }
+      @media (max-width: 1024px) {
+        .nav-links li a {
+          color: #fff !important;
+        }
+      }
+    </style>
+</head>
+<body>
+    <div class="top-nav">
+        <div class="top-nav-content">
+            <div class="social-links">
+                <a href="https://www.instagram.com/blackinksticker/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://web.facebook.com/blackinksticker" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.tiktok.com/@blackinksticker" target="_blank"><i class="fab fa-tiktok"></i></a>
+            </div>
+            <div class="contact-info">
+                <a href="tel:+6281567770100"><i class="fas fa-phone"></i><span class="text"> +62 815 6777 0100</span></a>
+                <a href="mailto:blackinkstickersatu@gmail.com"><i class="fas fa-envelope"></i><span class="text"> blackinkstickersatu@gmail.com</span></a>
+            </div>
+        </div>
+    </div>
+
+    <header style="background-color: #ffd700;">
+        <nav style="background-color: #ffd700;">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../images/logo-hitam.png" alt="Black Ink Logo">
+                </a>
+            </div>
+            <div class="hamburger">
+                <span style="background-color: #000;"></span>
+                <span style="background-color: #000;"></span>
+                <span style="background-color: #000;"></span>
+            </div>
+            <style>
+                .hamburger.active span:nth-child(1) {
+                    background-color: #fff !important;
+                    transform: rotate(45deg) translate(0px, 0px);
+                }
+                .hamburger.active span:nth-child(2) {
+                    opacity: 0;
+                }
+                .hamburger.active span:nth-child(3) {
+                    background-color: #fff !important;
+                    transform: rotate(-45deg) translate(0px, 0px);
+                }
+            </style>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="/sticker">Sticker Wrapping</a></li>
+                <li><a href="/printing">Digital Printing</a></li>
+                <li><a href="/souvenir">Souvenir Custom</a></li>
+                <li><a href="/kontak">Kontak Kami</a></li>
+                <li><a href="/about">Tentang Kami</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="sticker-hero" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/assets/sticker_result.webp') no-repeat center center; background-size: cover;">
+            <div class="sticker-hero-content">
+                <h1 style="color: #fff;">Sticker Wrapping</h1>
+                <p style="color: #fff;">Solusi pembuatan sticker berkualitas tinggi untuk berbagai kebutuhan</p>
+            </div>
+        </section>
+
+        <section class="sticker-types" style="background-color: #222;">
+            <h2 style="color: #fff;">Decal Kit</h2>
+            <div class="sticker-grid">
+                <div class="sticker-card" style="background-color: #333;">
+                    <div class="img-square">
+                        <img src="../images/assets/kit1.webp" alt="Decal Kit 1">
+                    </div>
+                    <div class="sticker-content">
+                        <div class="product-title">
+                            <h3 style="color: #fff;">Decal Kit 1</h3>
+                            <p style="color: #ccc; font-size: 0.9em; margin-top: 0.5em;"></p>
+                        </div>
+                        <a href="#" class="order-btn" onclick="showProductInfo('decal1'); return false;" style="background-color: #ffd700; color: #000;">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Deskripsi</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="sticker-card" style="background-color: #333;">
+                    <div class="img-square">
+                        <img src="../images/assets/kit2.webp" alt="Decal Kit 2">
+                    </div>
+                    <div class="sticker-content">
+                        <div class="product-title">
+                            <h3 style="color: #fff;">Decal Kit 2</h3>
+                            <p style="color: #ccc; font-size: 0.9em; margin-top: 0.5em;"></p>
+                        </div>
+                        <a href="#" class="order-btn" onclick="showProductInfo('decal2'); return false;" style="background-color: #ffd700; color: #000;">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Deskripsi</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="sticker-card" style="background-color: #333;">
+                    <div class="img-square">
+                        <img src="../images/assets/kit3.webp" alt="Decal Kit 3">
+                    </div>
+                    <div class="sticker-content">
+                        <div class="product-title">
+                            <h3 style="color: #fff;">Decal Kit 3</h3>
+                            <p style="color: #ccc; font-size: 0.9em; margin-top: 0.5em;"></p>
+                        </div>
+                        <a href="#" class="order-btn" onclick="showProductInfo('decal3'); return false;" style="background-color: #ffd700; color: #000;">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Deskripsi</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="sticker-card" style="background-color: #333;">
+                    <div class="img-square">
+                        <img src="../images/assets/kit4.webp" alt="Decal Kit 4">
+                    </div>
+                    <div class="sticker-content">
+                        <div class="product-title">
+                            <h3 style="color: #fff;">Decal Kit 4</h3>
+                            <p style="color: #ccc; font-size: 0.9em; margin-top: 0.5em;"></p>
+                        </div>
+                        <a href="#" class="order-btn" onclick="showProductInfo('decal4'); return false;" style="background-color: #ffd700; color: #000;">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Deskripsi</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="sticker-card" style="background-color: #333;">
+                    <div class="img-square">
+                        <img src="../images/assets/kit5.webp" alt="Decal Kit 5">
+                    </div>
+                    <div class="sticker-content">
+                        <div class="product-title">
+                            <h3 style="color: #fff;">Decal Kit 5</h3>
+                            <p style="color: #ccc; font-size: 0.9em; margin-top: 0.5em;"></p>
+                        </div>
+                        <a href="#" class="order-btn" onclick="showProductInfo('decal5'); return false;" style="background-color: #ffd700; color: #000;">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Deskripsi</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="sticker-card" style="background-color: #333;">
+                    <div class="img-square">
+                        <img src="../images/assets/kit6.webp" alt="Decal Kit 6">
+                    </div>
+                    <div class="sticker-content">
+                        <div class="product-title">
+                            <h3 style="color: #fff;">Decal Kit 6</h3>
+                            <p style="color: #ccc; font-size: 0.9em; margin-top: 0.5em;"></p>
+                        </div>
+                        <a href="#" class="order-btn" onclick="showProductInfo('decal6'); return false;" style="background-color: #ffd700; color: #000;">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Deskripsi</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="consultation-section" style="text-align: center;">
+                <p style="margin-bottom: 1.5em; font-size: 1.1em; background-color: #f8f9fa; padding: 1.2em 2em; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: inline-block; max-width: 600px;">Untuk katalog produk lengkap silakan chat kami di WhatsApp</p>
+                <a href="https://wa.me/6281567770100?text=Halo%20saya%20ingin%20konsultasi%20tentang%20Decal%20Kit" class="catalog-btn" style="display: inline-block; background-color: #25D366; color: white; padding: 1em 2em; border-radius: 5px; text-decoration: none; font-weight: 600;">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>Kosultasi di WhatsApp</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="sticker-types" style="background-color: #222;">
+            <h2 style="color: #fff;">Wrapping Sticker</h2>
+            <div class="sticker-grid">
+                <div class="sticker-card" style="background-color: #333;">
+                    <div class="img-square">
+                        <img src="../images/assets/wrap1.webp" alt="Wrapping 1">
+                    </div>
+                    <div class="sticker-content">
+                        <div class="product-title">
+                            <h3 style="color: #fff;">Wrapping 1</h3>
+                            <p style="color: #ccc; font-size: 0.9em; margin-top: 0.5em;"></p>
+                        </div>
+                        <a href="#" class="order-btn" onclick="showProductInfo('wrap1'); return false;" style="background-color: #ffd700; color: #000;">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Deskripsi</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="sticker-card" style="background-color: #333;">
+                    <div class="img-square">
+                        <img src="../images/assets/wrap2.webp" alt="Wrapping 2">
+                    </div>
+                    <div class="sticker-content">
+                        <div class="product-title">
+                            <h3 style="color: #fff;">Wrapping 2</h3>
+                            <p style="color: #ccc; font-size: 0.9em; margin-top: 0.5em;"></p>
+                        </div>
+                        <a href="#" class="order-btn" onclick="showProductInfo('wrap2'); return false;" style="background-color: #ffd700; color: #000;">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Deskripsi</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="sticker-card" style="background-color: #333;">
+                    <div class="img-square">
+                        <img src="../images/assets/wrap3.webp" alt="Wrapping 3">
+                    </div>
+                    <div class="sticker-content">
+                        <div class="product-title">
+                            <h3 style="color: #fff;">Wrapping 3</h3>
+                            <p style="color: #ccc; font-size: 0.9em; margin-top: 0.5em;"></p>
+                        </div>
+                        <a href="#" class="order-btn" onclick="showProductInfo('wrap3'); return false;" style="background-color: #ffd700; color: #000;">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Deskripsi</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="sticker-card" style="background-color: #333;">
+                    <div class="img-square">
+                        <img src="../images/assets/wrap4.webp" alt="Wrapping 4">
+                    </div>
+                    <div class="sticker-content">
+                        <div class="product-title">
+                            <h3 style="color: #fff;">Wrapping 4</h3>
+                            <p style="color: #ccc; font-size: 0.9em; margin-top: 0.5em;"></p>
+                        </div>
+                        <a href="#" class="order-btn" onclick="showProductInfo('wrap4'); return false;" style="background-color: #ffd700; color: #000;">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Deskripsi</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="sticker-card" style="background-color: #333;">
+                    <div class="img-square">
+                        <img src="../images/assets/wrap5.webp" alt="Wrapping 5">
+                    </div>
+                    <div class="sticker-content">
+                        <div class="product-title">
+                            <h3 style="color: #fff;">Wrapping 5</h3>
+                            <p style="color: #ccc; font-size: 0.9em; margin-top: 0.5em;"></p>
+                        </div>
+                        <a href="#" class="order-btn" onclick="showProductInfo('wrap5'); return false;" style="background-color: #ffd700; color: #000;">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Deskripsi</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="sticker-card" style="background-color: #333;">
+                    <div class="img-square">
+                        <img src="../images/assets/wrap6.webp" alt="Wrapping 6">
+                    </div>
+                    <div class="sticker-content">
+                        <div class="product-title">
+                            <h3 style="color: #fff;">Wrapping 6</h3>
+                            <p style="color: #ccc; font-size: 0.9em; margin-top: 0.5em;"></p>
+                        </div>
+                        <a href="#" class="order-btn" onclick="showProductInfo('wrap6'); return false;" style="background-color: #ffd700; color: #000;">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Deskripsi</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="consultation-section" style="text-align: center;">
+                <p style="margin-bottom: 1.5em; font-size: 1.1em; background-color: #f8f9fa; padding: 1.2em 2em; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: inline-block; max-width: 600px;">Untuk katalog produk lengkap silakan chat kami di WhatsApp</p>
+                <a href="https://wa.me/6281567770100?text=Halo%20saya%20ingin%20konsultasi%20tentang%20Wrapping%20Sticker" class="catalog-btn" style="display: inline-block; background-color: #25D366; color: white; padding: 1em 2em; border-radius: 5px; text-decoration: none; font-weight: 600;">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>Kosultasi di WhatsApp</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="sticker-process" style="background-color: #222;">
+            <h2 style="color: #fff;">Proses Pembuatan</h2>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-content">
+                        <div class="step-number" style="background-color: #ffd700; color: #000;">1</div>
+                        <div class="step-text">
+                            <h3 style="color: #000;">Konsultasi</h3>
+                            <p style="color: #222;">Diskusikan kebutuhan sticker Anda dengan tim kami</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-content">
+                        <div class="step-number" style="background-color: #ffd700; color: #000;">2</div>
+                        <div class="step-text">
+                            <h3 style="color: #000;">Pembayaran DP</h3>
+                            <p style="color: #222;">Pembayaran uang muka (DP) sebesar 80% dari total biaya</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-content">
+                        <div class="step-number" style="background-color: #ffd700; color: #000;">3</div>
+                        <div class="step-text">
+                            <h3 style="color: #000;">Desain & Proofing</h3>
+                            <p style="color: #222;">Tim desainer kami akan mempersiapkan desain dan proof untuk approval</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-content">
+                        <div class="step-number" style="background-color: #ffd700; color: #000;">4</div>
+                        <div class="step-text">
+                            <h3 style="color: #000;">Produksi</h3>
+                            <p style="color: #222;">Proses pencetakan dengan mesin berkualitas tinggi</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-content">
+                        <div class="step-number" style="background-color: #ffd700; color: #000;">5</div>
+                        <div class="step-text">
+                            <h3 style="color: #000;">Pelunasan & Pengiriman</h3>
+                            <p style="color: #222;">Pembayaran pelunasan dan pengiriman produk</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Kontak Kami</h3>
+                <p><i class="fas fa-phone"></i> +62 815 6777 0100</p>
+                <p><i class="fas fa-envelope"></i> blackinkstickersatu@gmail.com</p>
+                <a href="https://wa.me/6281567770100" class="whatsapp-btn">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>Chat WhatsApp</span>
+                </a>
+            </div>
+            <div class="footer-section">
+                <h3>Alamat</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Jl. Samanhudi, Klaten Tengah, Klaten</p>
+                <p>(timur stasiun Klaten, samping laba-laba variasi motor)</p>
+            </div>
+            <div class="footer-section">
+                <h3>Info Usaha</h3>
+                <p>Jam Operasional:</p>
+                <p>Senin - Sabtu: 08.00 - 20.00 WIB</p>
+                <p>Minggu: Libur</p>
+            </div>
+            <div class="footer-section">
+                <h3>Tentang Kami</h3>
+                <p>Black Ink Sticker Digital Printing adalah perusahaan percetakan digital yang berkomitmen untuk memberikan hasil cetak berkualitas tinggi dengan layanan yang cepat dan profesional.</p>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/blackinksticker/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://web.facebook.com/blackinksticker" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.tiktok.com/@blackinksticker" target="_blank"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="shipping-logos">
+            <img src="../images/assets/payment-min.png" alt="Shipping Partners">
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Black Ink Sticker Digital Printing. All rights reserved.</p>
+            <p>Inspiration To Give The Best</p>
+        </div>
+    </footer>
+    <script src="../script.js"></script>
+    <a href="https://wa.me/6281567770100" class="floating-whatsapp" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        function showProductInfo(type) {
+            let title, html;
+            switch(type) {
+                case 'vinyl':
+                    title = 'Sticker Vinyl';
+                    html = `
+                        <div class="product-info">
+                            <h4>Spesifikasi:</h4>
+                            <ul>
+                                <li>Tahan air dan cuaca</li>
+                                <li>Cocok untuk penggunaan outdoor</li>
+                                <li>Daya tahan hingga 5 tahun</li>
+                                <li>Bisa dilepas tanpa meninggalkan bekas</li>
+                            </ul>
+
+                        </div>
+                    `;
+                    break;
+                case 'transparan':
+                    title = 'Sticker Transparan';
+                    html = `
+                        <div class="product-info">
+                            <h4>Spesifikasi:</h4>
+                            <ul>
+                                <li>Background transparan</li>
+                                <li>Cocok untuk kaca</li>
+                                <li>Mudah dilepas</li>
+                                <li>Tahan air</li>
+                            </ul>
+                            <h4>Penggunaan:</h4>
+                            <ul>
+                                <li>Stiker kaca toko</li>
+                                <li>Stiker kaca mobil</li>
+                                <li>Stiker display</li>
+                            </ul>
+                        </div>
+                    `;
+                    break;
+                case 'glossy':
+                    title = 'Sticker Glossy';
+                    html = `
+                        <div class="product-info">
+                            <h4>Spesifikasi:</h4>
+                            <ul>
+                                <li>Finishing glossy</li>
+                                <li>Tampilan mengkilap</li>
+                                <li>Tahan air</li>
+                                <li>Mudah dibersihkan</li>
+                            </ul>
+                            <h4>Penggunaan:</h4>
+                            <ul>
+                                <li>Stiker produk</li>
+                                <li>Stiker kemasan</li>
+                                <li>Stiker label</li>
+                            </ul>
+                        </div>
+                    `;
+                    break;
+                case 'decal1':
+                    title = 'Decal Kit 1';
+                    html = `
+                        <div class="product-info">
+                            <h4>Spesifikasi:</h4>
+                            <ul>
+                                <li>Tahan air dan cuaca</li>
+                                <li>Cocok untuk penggunaan outdoor</li>
+                                <li>Daya tahan hingga 5 tahun</li>
+                                <li>Bisa dilepas tanpa meninggalkan bekas</li>
+                            </ul>
+
+                        </div>
+                    `;
+                    break;
+                case 'decal2':
+                    title = 'Decal Kit 2';
+                    html = `
+                        <div class="product-info">
+                            <h4>Spesifikasi:</h4>
+                            <ul>
+                                <li>Tahan air dan cuaca</li>
+                                <li>Cocok untuk penggunaan outdoor</li>
+                                <li>Daya tahan hingga 5 tahun</li>
+                                <li>Bisa dilepas tanpa meninggalkan bekas</li>
+                            </ul>
+
+                        </div>
+                    `;
+                    break;
+                case 'decal3':
+                    title = 'Decal Kit 3';
+                    html = `
+                        <div class="product-info">
+                            <h4>Spesifikasi:</h4>
+                            <ul>
+                                <li>Tahan air dan cuaca</li>
+                                <li>Cocok untuk penggunaan outdoor</li>
+                                <li>Daya tahan hingga 5 tahun</li>
+                                <li>Bisa dilepas tanpa meninggalkan bekas</li>
+                            </ul>
+
+                        </div>
+                    `;
+                    break;
+                case 'decal4':
+                    title = 'Decal Kit 4';
+                    html = `
+                        <div class="product-info">
+                            <h4>Spesifikasi:</h4>
+                            <ul>
+                                <li>Tahan air dan cuaca</li>
+                                <li>Cocok untuk penggunaan outdoor</li>
+                                <li>Daya tahan hingga 5 tahun</li>
+                                <li>Bisa dilepas tanpa meninggalkan bekas</li>
+                            </ul>
+
+                        </div>
+                    `;
+                    break;
+                case 'decal5':
+                    title = 'Decal Kit 5';
+                    html = `
+                        <div class="product-info">
+                            <h4>Spesifikasi:</h4>
+                            <ul>
+                                <li>Tahan air dan cuaca</li>
+                                <li>Cocok untuk penggunaan outdoor</li>
+                                <li>Daya tahan hingga 5 tahun</li>
+                                <li>Bisa dilepas tanpa meninggalkan bekas</li>
+                            </ul>
+
+                        </div>
+                    `;
+                    break;
+                case 'decal6':
+                    title = 'Decal Kit 6';
+                    html = `
+                        <div class="product-info">
+                            <h4>Spesifikasi:</h4>
+                            <ul>
+                                <li>Tahan air dan cuaca</li>
+                                <li>Cocok untuk penggunaan outdoor</li>
+                                <li>Daya tahan hingga 5 tahun</li>
+                                <li>Bisa dilepas tanpa meninggalkan bekas</li>
+                            </ul>
+
+                        </div>
+                    `;
+                    break;
+                case 'wrap1':
+                    title = 'Wrapping 1';
+                    html = `
+                        <div class="product-info">
+                            <h4>Spesifikasi:</h4>
+                            <ul>
+                                <li>Tahan air dan cuaca</li>
+                                <li>Cocok untuk penggunaan outdoor</li>
+                                <li>Daya tahan hingga 5 tahun</li>
+                                <li>Bisa dilepas tanpa meninggalkan bekas</li>
+                            </ul>
+
+                        </div>
+                    `;
+                    break;
+                case 'wrap2':
+                    title = 'Wrapping 2';
+                    html = `
+                        <div class="product-info">
+                            <h4>Spesifikasi:</h4>
+                            <ul>
+                                <li>Tahan air dan cuaca</li>
+                                <li>Cocok untuk penggunaan outdoor</li>
+                                <li>Daya tahan hingga 5 tahun</li>
+                                <li>Bisa dilepas tanpa meninggalkan bekas</li>
+                            </ul>
+
+                        </div>
+                    `;
+                    break;
+                case 'wrap3':
+                    title = 'Wrapping 3';
+                    html = `
+                        <div class="product-info">
+                            <h4>Spesifikasi:</h4>
+                            <ul>
+                                <li>Tahan air dan cuaca</li>
+                                <li>Cocok untuk penggunaan outdoor</li>
+                                <li>Daya tahan hingga 5 tahun</li>
+                                <li>Bisa dilepas tanpa meninggalkan bekas</li>
+                            </ul>
+
+                        </div>
+                    `;
+                    break;
+                case 'wrap4':
+                    title = 'Wrapping 4';
+                    html = `
+                        <div class="product-info">
+                            <h4>Spesifikasi:</h4>
+                            <ul>
+                                <li>Tahan air dan cuaca</li>
+                                <li>Cocok untuk penggunaan outdoor</li>
+                                <li>Daya tahan hingga 5 tahun</li>
+                                <li>Bisa dilepas tanpa meninggalkan bekas</li>
+                            </ul>
+
+                        </div>
+                    `;
+                    break;
+                case 'wrap5':
+                    title = 'Wrapping 5';
+                    html = `
+                        <div class="product-info">
+                            <h4>Spesifikasi:</h4>
+                            <ul>
+                                <li>Tahan air dan cuaca</li>
+                                <li>Cocok untuk penggunaan outdoor</li>
+                                <li>Daya tahan hingga 5 tahun</li>
+                                <li>Bisa dilepas tanpa meninggalkan bekas</li>
+                            </ul>
+
+                        </div>
+                    `;
+                    break;
+                case 'wrap6':
+                    title = 'Wrapping 6';
+                    html = `
+                        <div class="product-info">
+                            <h4>Spesifikasi:</h4>
+                            <ul>
+                                <li>Tahan air dan cuaca</li>
+                                <li>Cocok untuk penggunaan outdoor</li>
+                                <li>Daya tahan hingga 5 tahun</li>
+                                <li>Bisa dilepas tanpa meninggalkan bekas</li>
+                            </ul>
+
+                        </div>
+                    `;
+                    break;
+            }
+
+            Swal.fire({
+                title: title,
+                html: html,
+                width: '600px',
+                showConfirmButton: false,
+                showCloseButton: true,
+                customClass: {
+                    popup: 'swal2-popup',
+                    title: 'swal2-title',
+                    closeButton: 'swal2-close'
+                }
+            });
+        }
+    </script>
+</body>
+</html> 
