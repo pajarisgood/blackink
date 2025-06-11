@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#222222">
+    <title>Digital Printing - Black Ink Sticker</title>
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+      .sticker-card .img-square {
+        width: 100%;
+        aspect-ratio: 1/1;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 12px;
+        overflow: hidden;
+      }
+      .sticker-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 0;
+        background: #fff;
+        display: block;
+      }
+      .order-btn {
+        color: #fff !important;
+      }
+      .consultation-section {
+        margin-top: 3em;
+        padding-left: 1.2em;
+        padding-right: 1.2em;
+      }
+      @media (min-width: 768px) {
+        .consultation-section {
+          margin: 5em auto;
+          max-width: 800px;
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+    </style>
+</head>
+<body>
+    <div class="top-nav">
+        <div class="top-nav-content">
+            <div class="social-links">
+                <a href="https://www.instagram.com/blackinksticker/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://web.facebook.com/blackinksticker" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.tiktok.com/@blackinksticker" target="_blank"><i class="fab fa-tiktok"></i></a>
+            </div>
+            <div class="contact-info">
+                <a href="tel:+6281567770100"><i class="fas fa-phone"></i><span class="text"> +62 815 6777 0100</span></a>
+                <a href="mailto:blackinkstickersatu@gmail.com"><i class="fas fa-envelope"></i><span class="text"> blackinkstickersatu@gmail.com</span></a>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../images/logo.png" alt="Black Ink Logo">
+                </a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="/sticker">Sticker Wrapping</a></li>
+                <li><a href="/printing">Digital Printing</a></li>
+                <li><a href="/souvenir">Souvenir Custom</a></li>
+                <li><a href="/kontak">Kontak Kami</a></li>
+                <li><a href="/about">Tentang Kami</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="printing-hero">
+            <div class="printing-banner">
+                <img src="../images/assets/header-sou.jpg" alt="Souvenir Custom Banner">
+            </div>
+        </section>
+
+        <section class="sticker-types">
+            <h2>Jenis Layanan</h2>
+            <div class="sticker-grid">
+                <div class="sticker-card">
+                    <div class="img-square">
+                        <img src="../images/assets/sou-mug.jpg" alt="Custom Mug">
+                    </div>
+                    <div class="sticker-content">
+                        <div class="product-title">
+                            <h3>Mug Custom</h3>
+                        </div>
+                        <a href="#" class="order-btn" onclick="showProductInfo('mug'); return false;" style="background-color: #ff0000; color: #fff;">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Deskripsi</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="sticker-card">
+                    <div class="img-square">
+                        <img src="../images/assets/sou-lanyard.jpg" alt="Custom Lanyard">
+                    </div>
+                    <div class="sticker-content">
+                        <div class="product-title">
+                            <h3>Lanyard Custom</h3>
+                        </div>
+                        <a href="#" class="order-btn" onclick="showProductInfo('lanyard'); return false;" style="background-color: #ff0000; color: #fff;">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Deskripsi</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="sticker-card">
+                    <div class="img-square">
+                        <img src="../images/assets/sou-pin.jpg" alt="Custom Pin">
+                    </div>
+                    <div class="sticker-content">
+                        <div class="product-title">
+                            <h3>Pin Custom</h3>
+                        </div>
+                        <a href="#" class="order-btn" onclick="showProductInfo('pin'); return false;" style="background-color: #ff0000; color: #fff;">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Deskripsi</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="sticker-card">
+                    <div class="img-square">
+                        <img src="../images/assets/sou-topi.jpg" alt="Custom Topi">
+                    </div>
+                    <div class="sticker-content">
+                        <div class="product-title">
+                            <h3>Topi Custom</h3>
+                        </div>
+                        <a href="#" class="order-btn" onclick="showProductInfo('topi'); return false;" style="background-color: #ff0000; color: #fff;">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Deskripsi</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="consultation-section" style="text-align: center;">
+            <p style="margin-bottom: 1.5em; font-size: 1.1em; background-color: #f8f9fa; padding: 1.2em 2em; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: inline-block; max-width: 600px;">Untuk katalog produk lengkap silakan chat kami di WhatsApp</p>
+            <a href="https://wa.me/6281567770100?text=Halo%20saya%20ingin%20konsultasi%20tentang%20Souvenir%20Custom" class="catalog-btn" style="display: inline-block; background-color: #25D366; color: white; padding: 1em 2em; border-radius: 5px; text-decoration: none; font-weight: 600;">
+                <i class="fab fa-whatsapp"></i>
+                <span>Kosultasi di WhatsApp</span>
+            </a>
+        </div>
+
+        <section class="sticker-process">
+            <h2>Proses Pengerjaan</h2>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-content">
+                        <div class="step-number">1</div>
+                        <div class="step-text">
+                            <h3>Konsultasi</h3>
+                            <p>Diskusikan kebutuhan cetak Anda dengan tim kami</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-content">
+                        <div class="step-number">2</div>
+                        <div class="step-text">
+                            <h3>Pembayaran DP</h3>
+                            <p>Pembayaran uang muka (DP) sebesar 80% dari total biaya</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-content">
+                        <div class="step-number">3</div>
+                        <div class="step-text">
+                            <h3>Desain & Proofing</h3>
+                            <p>Tim desainer kami akan mempersiapkan desain dan proof untuk approval</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-content">
+                        <div class="step-number">4</div>
+                        <div class="step-text">
+                            <h3>Produksi</h3>
+                            <p>Proses pencetakan dengan mesin digital berkualitas tinggi</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-content">
+                        <div class="step-number">5</div>
+                        <div class="step-text">
+                            <h3>Pelunasan & Pengiriman</h3>
+                            <p>Pembayaran pelunasan dan pengiriman produk</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Kontak Kami</h3>
+                <p><i class="fas fa-phone"></i> +62 815 6777 0100</p>
+                <p><i class="fas fa-envelope"></i> blackinkstickersatu@gmail.com</p>
+                <a href="https://wa.me/6281567770100" class="whatsapp-btn">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>Chat WhatsApp</span>
+                </a>
+            </div>
+            <div class="footer-section">
+                <h3>Alamat</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Jl. Samanhudi, Klaten Tengah, Klaten</p>
+                <p>(timur stasiun Klaten, samping laba-laba variasi motor)</p>
+            </div>
+            <div class="footer-section">
+                <h3>Info Usaha</h3>
+                <p>Jam Operasional:</p>
+                <p>Senin - Sabtu: 08.00 - 20.00 WIB</p>
+                <p>Minggu: Libur</p>
+            </div>
+            <div class="footer-section">
+                <h3>Tentang Kami</h3>
+                <p>Black Ink Sticker Digital Printing adalah perusahaan percetakan digital yang berkomitmen untuk memberikan hasil cetak berkualitas tinggi dengan layanan yang cepat dan profesional.</p>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/blackinksticker/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://web.facebook.com/blackinksticker" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.tiktok.com/@blackinksticker" target="_blank"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="shipping-logos">
+            <img src="../images/assets/payment-min.png" alt="Shipping Partners">
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Black Ink Sticker Digital Printing. All rights reserved.</p>
+            <p>Inspiration To Give The Best</p>
+        </div>
+    </footer>
+    <script src="../script.js"></script>
+    <script>
+        // Move showProductInfo function to script.js
+    </script>
+    <a href="https://wa.me/6281567770100" class="floating-whatsapp" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+</body>
+</html> 
