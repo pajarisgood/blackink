@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Awioasjoskks pew peww</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #main-container {
+      width: 20%;
+      max-width: 600px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	  margin-left: 20px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="submit"] {
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      width: calc(100% - 18px);
+      box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+      background-color: #007bff;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+
+    #result {
+      margin-top: 20px;
+    }
+
+    span {
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+img {
+width : 90%;
+}
+    button {
+      padding: 5px 10px;
+      background-color: #28a745;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-right: 15px;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="main-container">
+    <form id="myForm" onsubmit="event.preventDefault(); splitText();">
+      <label for="inputText">Date parser</label><br><br>
+      <input type="text" id="inputText" name="inputText" placeholder="sabtu, 19 mei 2029"><br>
+	  <button onclick="pasteText(event, 'inputText')" class="paste-button">Paste</button>
+<br><br>
+      <input type="submit" value="Submit">
+    </form>
+    <div id="result">
+      <h3>Hasil:</h3>
+      <div id="output"></div>
+      <div id="newResult"></div>
+    </div>
+  </div>
+  
+  <div id="main-container">
+    <form id="myForm2" onsubmit="event.preventDefault(); splitText2();">
+      <label for="inputText2">Name parser</label><br><br>
+      <input type="text" id="inputText2" name="inputText2" placeholder="pajar & mella"><br>
+	  <button onclick="pasteText(event, 'inputText2')" class="paste-button">Paste</button>
+<br><br>
+      <input type="submit" value="Submit">
+    </form>
+    <div id="result2">
+      <h3>Hasil:</h3>
+      <div id="output2"></div>
+      <div id="newResult2"></div>
+    </div>
+  </div>  
+ 
+
+  <script>
+function pasteText(event, inputId) {
+  event.preventDefault(); // Mencegah submit form
+
+  const input = document.getElementById(inputId);
+  navigator.clipboard.readText().then(clipText => {
+    input.value = clipText;
+  }).catch(err => {
+    console.error('Failed to paste text: ', err);
+  });
+}
+
+
+function splitText() {
+  var text = document.getElementById("inputText").value;
+var words = text.match(/\b[\w']+\b/g);
+
+
+  var outputDiv = document.getElementById("output");
+  outputDiv.innerHTML = "";
+
+  words.forEach(function(word, index) {
+    var properCaseWord = word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+
+    var copyButton = document.createElement("button");
+    copyButton.textContent = "Copy";
+    copyButton.onclick = function() {
+      copyToClipboard(properCaseWord);
+    };
+
+    var span = document.createElement("span");
+    span.textContent = properCaseWord + " ";
+
+    outputDiv.appendChild(copyButton); 
+    outputDiv.appendChild(span);
+    outputDiv.appendChild(document.createElement("br"));
+  });
+
+  var newResultDiv = document.getElementById("newResult");
+  newResultDiv.innerHTML = "";
+
+  var monthMap = {
+    "januari": "01",
+    "februari": "02",
+    "maret": "03",
+    "april": "04",
+    "mei": "05",
+    "juni": "06",
+    "juli": "07",
+    "agustus": "08",
+    "september": "09",
+    "oktober": "10",
+    "november": "11",
+    "desember": "12"
+  };
+
+  var result = words.map(function(word, index) {
+    if (index === 2 && monthMap[word.toLowerCase()]) {
+      return monthMap[word.toLowerCase()];
+    } else if (index === 0) {
+      return word.toUpperCase();
+    } else {
+      return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+    }
+  });
+
+  var finalResult = result.join(" | ");
+
+  finalResult = finalResult.replace(/\|/, "<br>");
+
+  var resultSpan = document.createElement("span");
+  var resultCopyButton = document.createElement("button");
+  resultCopyButton.textContent = "Copy";
+  resultCopyButton.onclick = function() {
+    copyToClipboard(finalResult);
+  };
+
+  resultSpan.textContent = finalResult;
+
+  newResultDiv.appendChild(resultCopyButton);
+  newResultDiv.appendChild(resultSpan);
+
+  var originalProperCase = text.replace(/\b[\w']+\b/g, function(match) {
+    return match.charAt(0).toUpperCase() + match.slice(1).toLowerCase();
+  });
+
+let textx = originalProperCase;
+if (textx.trim().slice(-1) === ',') {
+    textx = textx.trim().slice(0, -1);
+}
+
+
+  var originalCopyButton = document.createElement("button");
+  originalCopyButton.textContent = "Copy";
+  originalCopyButton.onclick = function() {
+    copyToClipboard(textx);
+  };
+
+  var originalSpan = document.createElement("span");
+  originalSpan.textContent = textx;
+
+  newResultDiv.appendChild(document.createElement("br"));
+  newResultDiv.appendChild(originalCopyButton);
+  newResultDiv.appendChild(originalSpan);
+}
+
+
+function splitText2() {
+  var text = document.getElementById("inputText2").value;
+  var words = text.split(' & ');
+
+  var outputDiv = document.getElementById("output2");
+  outputDiv.innerHTML = "";
+
+  var properCaseWords = words.map(function(word) {
+    return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+  });
+
+  var finalResult = properCaseWords.join('-').toLowerCase();
+
+
+var kata = "Hai Kak, link-nya sudah jadi. Silakan dicek.\n\nhttps://kalaharu.xyz/" + finalResult + "\n\nUntuk memberi nama tamu, silakan lewat link di bawah ini, panduannya sudah ada di dalam link berikut.\n\nhttps://kalaharu.xyz/share?id=" + finalResult;
+var kalaharuFin = "/y";
+
+  
+
+  var resultSpan = document.createElement("span");
+  var resultCopyButton = document.createElement("button");
+  resultCopyButton.textContent = "Copy";
+  resultCopyButton.onclick = function() {
+    copyToClipboard(kata);
+  };
+
+  resultSpan.textContent = kalaharuFin;
+
+  outputDiv.appendChild(resultCopyButton);
+  outputDiv.appendChild(resultSpan);
+  outputDiv.appendChild(document.createElement("br")); // Menambahkan break
+
+
+// var kata2 = "Berikut cara share dan memberi nama tamu di undangannya ya:\n\n1. Klik LINK SHARE berikut:\n\nhttps://www.kalaharu.xyz/share/?id=" + finalResult + "\n\n2. Ketik DAFTAR NAMA tamu di isian nama tamunya\nContoh:\nNana (enter)\nSakinah (enter) dan seterusnya\n\n3. Klik tombol 'buat daftar nama tamu' di bawahnya, warna hijau\n\n4. Di bagian paling bawah akan muncul daftar tamunya, selanjutnya share undangan dengan pilihan share yg tersedia.\n\n(Silakan dicoba langsung ya agar bisa)\n\nPanduan video memberi nama tamu dan share:\nhttps://youtu.be/atr5GsfdJUM\n\nPanduan mengubah kata pengantar:\nhttps://youtu.be/_1kGQyIdjXI\n";
+// var kalaharuSecondResult = "/ss";
+
+
+//  var secondResultSpan = document.createElement("span");
+//  var secondResultCopyButton = document.createElement("button");
+//  secondResultCopyButton.textContent = "Copy";
+//  secondResultCopyButton.onclick = function() {
+//    copyToClipboard(kata2);
+//  };
+
+ // secondResultSpan.textContent = kalaharuSecondResult;
+
+//  outputDiv.appendChild(secondResultCopyButton);
+ //  outputDiv.appendChild(secondResultSpan);
+
+ // outputDiv.appendChild(document.createElement("br")); // Menambahkan break
+
+
+  // Menambahkan hasil propercase
+  var propercaseDiv = document.createElement("div");
+  var propercaseSpan = document.createElement("span");
+  var propercaseCopyButton = document.createElement("button");
+  propercaseCopyButton.textContent = "Copy";
+  propercaseCopyButton.onclick = function() {
+    copyToClipboard(finalResult);
+  };
+
+  propercaseSpan.textContent = finalResult;
+
+  propercaseDiv.appendChild(propercaseCopyButton);
+  propercaseDiv.appendChild(propercaseSpan);
+  outputDiv.appendChild(propercaseDiv);
+
+  // Display individual words with copy buttons
+  var newResultDiv = document.getElementById("newResult2");
+  newResultDiv.innerHTML = "";
+
+  properCaseWords.forEach(function(word) {
+    var wordDiv = document.createElement("div");
+
+    var copyButton = document.createElement("button");
+    copyButton.textContent = "Copy";
+    copyButton.onclick = function() {
+      copyToClipboard(word);
+    };
+
+    var span = document.createElement("span");
+    span.textContent = word;
+
+    wordDiv.appendChild(copyButton);
+    wordDiv.appendChild(span);
+    newResultDiv.appendChild(wordDiv);
+  });
+
+  // Menambahkan hasil original dalam ProperCase
+  var originalProperCase = words.map(function(word) {
+    return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+  }).join(' & ');
+
+  var originalResultDiv = document.createElement("div");
+  var originalResultSpan = document.createElement("span");
+  var originalResultCopyButton = document.createElement("button");
+  originalResultCopyButton.textContent = "Copy";
+  originalResultCopyButton.onclick = function() {
+    copyToClipboard(originalProperCase);
+  };
+
+  originalResultSpan.textContent = originalProperCase;
+
+  outputDiv.appendChild(originalResultCopyButton);
+  outputDiv.appendChild(originalResultSpan);
+}
+
+
+
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text)
+        .then(function() {
+          console.log("Teks berhasil disalin ke clipboard: " + text);
+        })
+        .catch(function(err) {
+          console.error("Gagal menyalin teks: ", err);
+        });
+    }
+  </script>
+</body>
+</html>
